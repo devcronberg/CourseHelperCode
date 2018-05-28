@@ -6,14 +6,10 @@
     public class RandomEx
     {
         private static System.Random rnd = new Random();
-        /// <summary>
-        /// Get a random number
-        /// </summary>
-        /// <param name="minIncludedValue">1 = 1 is included</param>
-        /// <param name="maxNotIncludedValue">7 = 7 is not not included (max=6)</param>
-        /// <returns></returns>
-        public static int RandomInt(int minIncludedValue, int maxNotIncludedValue) {
-            return rnd.Next(minIncludedValue, maxNotIncludedValue);
+
+        public static int RandomInt(int minIncludedValue, int maxIncludedValue)
+        {
+            return rnd.Next(minIncludedValue, maxIncludedValue + 1);
         }
 
         public static bool RandomBool()
@@ -25,13 +21,10 @@
                 return false;
         }
 
-        /// <summary>
-        /// Random number between 1-6
-        /// </summary>
-        /// <returns></returns>
+     
         public static int RandomDice()
         {
-            return rnd.Next(1, 7);
+            return RandomInt(1, 6);
         }
 
     }
